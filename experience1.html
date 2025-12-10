@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience | Nur Qistina Personal Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff8f3;
+      color: #4a3c2b;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 25px 0 15px 0;
+      text-align: center;
+      border-bottom: 1px solid #f1dfd2;
+    }
+
+    header h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      color: #5a4635;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 12px 0;
+      background-color: #f4d9c4;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #5a4635;
+      padding: 10px 18px;
+      border-radius: 20px;
+      background-color: #fbeee2;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      background-color: #e8cbb0;
+      transform: translateY(-3px);
+    }
+
+    .experience-section {
+      padding: 70px 8%;
+      background: linear-gradient(180deg, #fff8f3 0%, #fbeee2 100%);
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-family: "Great Vibes", cursive;
+      font-size: 46px;
+      color: #4a3c2b;
+      margin-bottom: 60px;
+      background-color: #fff7f2;
+      display: inline-block;
+      padding: 10px 40px;
+      border-radius: 40px;
+      border: 2px solid #e8cbb0;
+      box-shadow: 0 4px 12px rgba(232, 203, 176, 0.3);
+    }
+
+    .exp-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      margin-bottom: 40px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 15px 25px;
+      flex-wrap: wrap;
+    }
+
+    .exp-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    }
+
+    .exp-card img, 
+    .exp-card video {
+      width: 45%;
+      border-radius: 14px;
+      object-fit: cover;
+      height: 250px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .exp-info {
+      width: 50%;
+      padding: 0 20px;
+    }
+
+    .exp-info h3 {
+      font-family: "Playfair Display", serif;
+      color: #5a4635;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .exp-info p {
+      color: #5a4635;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .exp-card:nth-child(even) {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+
+    footer {
+      background-color: #2b2b2b;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .exp-card {
+        flex-direction: column !important;
+        text-align: center;
+      }
+
+      .exp-card img, 
+      .exp-card video {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+      }
+
+      .exp-info {
+        width: 100%;
+      }
+    }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Nur Qistina Personal Website</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index1.html">Home</a></li>
+      <li><a href="aboutme1.html">About Me</a></li>
+      <li><a href="family1.html">Family</a></li>
+      <li><a href="education1.html">Education</a></li>
+      <li><a href="experience1.html" style="background-color:#e8cbb0;">Experience</a></li>
+      <li><a href="friends1.html">Friends</a></li>
+      <li><a href="hobby1.html">Hobby</a></li>
+      <li><a href="gallery1.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <section class="experience-section">
+    <h2 class="section-title">My Experience Journey</h2>
+
+    <!-- Part Time Job -->
+    <div class="exp-card">
+      <img src="IMAGES/parttime.jpg" alt="Part time Job">
+      <div class="exp-info">
+        <h3>Part Time Job </h3>
+        <p>I used to work part-time at a watch shop — it was fun helping customers choose their favorite watches.</p>
+      </div>
+    </div>
+
+    <!-- Assisted Program Video -->
+    <div class="exp-card">
+      <video controls>
+        <source src="tadika1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="exp-info">
+        <h3>Assisted Program </h3>
+        <p>I joined a program to assist children with disabilities, and it made me appreciate small moments of joy even more.</p>
+      </div>
+    </div>
+
+    <!-- Internship -->
+    <div class="exp-card">
+      <img src="IMAGES/internship.jpg" alt="Internship Day">
+      <div class="exp-info">
+        <h3>Internship at National Library of Malaysia</h3>
+        <p>During my internship, I got to learn about record management and teamwork, and I met some really nice people who made the experience even better.</p>
+      </div>
+    </div>
+
+    <!-- Book Binding Video -->
+    <div class="exp-card">
+      <video controls>
+        <source src="buku.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="exp-info">
+        <h3>Book Binding Process</h3>
+        <p>During my internship, I got to try the book binding process. I helped organize the papers, put them together, and see the final documents come alive. It was fun and I learned to be patient and careful with every step.</p>
+      </div>
+    </div>
+
+    <!-- New Image 2 -->
+    <div class="exp-card">
+      <img src="IMAGES/arkib.jpg" alt="Community Event">
+      <div class="exp-info">
+        <h3>Visit University Archived Day!</h3>
+        <p>I visited the archives at UiTM Kelantan branch, exploring how records and historical documents are stored and managed. It was eye-opening to see how organized and systematic archives can be!</p>
+      </div>
+    </div>
+
+    <!-- Preservation Video -->
+    <div class="exp-card">
+      <video controls>
+        <source src="preservation.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="exp-info">
+        <h3>Preservation of an Old Malay Manuscript</h3>
+        <p>I had the chance to do preservation work on old Malay manuscripts. It was fascinating to handle these historical documents carefully and learn techniques to keep them safe for the future.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>&copy; 2025 This website is for educational purposes only | Nur Qistina Binti Azman Shah</p>
+  </footer>
+</body>
+</html>

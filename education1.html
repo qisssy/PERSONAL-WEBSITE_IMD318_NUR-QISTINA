@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education | Nur Qistina Personal Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff7f2;
+      color: #4a3c2b;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 25px 0 15px 0;
+      text-align: center;
+      border-bottom: 1px solid #f1dfd2;
+    }
+
+    header h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      color: #5a4635;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 12px 0;
+      background-color: #f4d9c4;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #5a4635;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      background-color: #fbeee2;
+    }
+
+    nav ul li a:hover {
+      background-color: #e8cbb0;
+      transform: translateY(-3px);
+    }
+
+    /* ===== Education Section ===== */
+    .education-section {
+      padding: 80px 0;
+      background: linear-gradient(180deg, #fff7f2 0%, #fbeee2 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .education-section::before {
+      content: "";
+      position: absolute;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='800'><path d='M2 0 Q4 100 2 200 Q0 300 2 400 Q4 500 2 600 Q0 700 2 800' stroke='%23e8cbb0' stroke-width='3' fill='none' stroke-linecap='round'/></svg>");
+      background-repeat: repeat-y;
+      background-size: contain;
+      z-index: 1;
+      opacity: 0.9;
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-family: "Great Vibes", cursive;
+      font-size: 44px;
+      color: #4a3c2b;
+      margin-bottom: 80px;
+      display: block;
+      position: relative;
+      background-color: #fff7f2;
+      padding: 10px 40px;
+      border-radius: 40px;
+      border: 2px solid #e8cbb0;
+      box-shadow: 0 4px 12px rgba(232, 203, 176, 0.3);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 2;
+    }
+
+    h2.section-title::before,
+    h2.section-title::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border: 2px solid #e8cbb0;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff7f2;
+    }
+
+    h2.section-title::before { left: -20px; }
+    h2.section-title::after { right: -20px; }
+
+    /* Cards */
+    .edu-card {
+      position: relative;
+      width: 46%;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+      z-index: 2;
+    }
+
+    .edu-card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .edu-card img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+    .edu-info h3 {
+      font-family: "Playfair Display", serif;
+      color: #5a4635;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .edu-info p {
+      color: #5a4635;
+      font-size: 14px;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .edu-card.left { left: calc(50% - 510px); }
+    .edu-card.right { left: 50%; flex-direction: row-reverse; text-align: right; }
+
+    .edu-card.left::before,
+    .edu-card.right::before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background-color: #e8cbb0;
+      border: 3px solid #fff;
+      top: 25px;
+      border-radius: 50%;
+      z-index: 3;
+    }
+
+    .edu-card.left::before { right: -8px; }
+    .edu-card.right::before { left: -8px; }
+
+    /* ===== Video Section ===== */
+    .video-section {
+      background-color: #fff7f2;
+      padding: 70px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .video-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 70%;
+      max-width: 900px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      padding: 25px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .video-content {
+      flex: 1;
+    }
+
+    .video-content h2 {
+      font-family: "Great Vibes", cursive;
+      font-size: 34px;
+      color: #4a3c2b;
+      margin: 0 0 10px 0;
+    }
+
+    .video-content p {
+      font-size: 15px;
+      color: #5a4635;
+      margin: 0;
+    }
+
+    .video-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .video-container video {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    @media (max-width: 900px) {
+      .education-section::before { left: 8px; }
+      .edu-card {
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        left: 0;
+      }
+      .edu-card img { margin: 0 0 10px 0; }
+      .video-card {
+        flex-direction: column;
+        width: 90%;
+        text-align: center;
+      }
+      .video-container video { max-width: 300px; }
+    }
+
+    footer {
+      background-color: #2b2b2b;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 13px;
+    }
+  </style>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1>Nur Qistina Personal Website</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index1.html">Home</a></li>
+      <li><a href="aboutme1.html">About Me</a></li>
+      <li><a href="family1.html">Family</a></li>
+      <li><a href="education1.html" style="background-color:#e8cbb0;">Education</a></li>
+      <li><a href="experience1.html">Experience</a></li>
+      <li><a href="friends1.html">Friends</a></li>
+      <li><a href="hobby1.html">Hobby</a></li>
+      <li><a href="gallery1.html">Gallery</a></li>
+    </ul>
+  </nav>
+
+  <section class="education-section">
+    <h2 class="section-title">My Educational Journey</h2>
+
+    <div class="edu-card left show">
+      <img src="IMAGES/tadika.jpg" alt="Kindergarten">
+      <div class="edu-info">
+        <h3>Kindergarten | 2009 - 2011</h3>
+        <p>Tadika Mega Suria, Selangor — Learned the basics of reading, writing, and making friends — where curiosity first bloomed!</p>
+      </div>
+    </div>
+
+    <div class="edu-card right show">
+      <img src="IMAGES/rendah.jpg" alt="Primary School">
+      <div class="edu-info">
+        <h3>Primary School | 2012 - 2017</h3>
+        <p>SK Bandar Sunway Semenyih, Selangor — Gained foundational knowledge and took part in fun school activities and competitions.</p>
+      </div>
+    </div>
+
+    <div class="edu-card left show">
+      <img src="IMAGES/menengah.jpg" alt="Secondary School">
+      <div class="edu-info">
+        <h3>Secondary School | 2018 - 2023</h3>
+        <p>SMK Taman Jasmin 2, Selangor — Dived into science and math, and joined clubs like English Society.</p>
+      </div>
+    </div>
+
+    <div class="edu-card right show">
+      <img src="IMAGES/diploma.jpg" alt="Diploma">
+      <div class="edu-info">
+        <h3>Diploma | 2023 - Now</h3>
+        <p>Universiti Teknologi MARA, Cawangan Kelantan — My current academic journey filled with challenges and growth while pursuing my dreams.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Video Achievement Card ===== -->
+  <section class="video-section">
+    <div class="video-card">
+      <div class="video-content">
+        <h2>My Academic Achievement Award</h2>
+        <p>Received 3rd place in class during secondary school 🏅</p>
+      </div>
+      <div class="video-container">
+        <video controls>
+          <source src="anugerah.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 This website is for educational purposes only | Nur Qistina Binti Azman Shah</p>
+  </footer>
+</body>
+</html>

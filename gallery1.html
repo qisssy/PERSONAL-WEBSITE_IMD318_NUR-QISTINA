@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Nur Qistina Personal Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff7f2;
+      color: #4a3c2b;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 25px 0 15px 0;
+      text-align: center;
+      border-bottom: 1px solid #f1dfd2;
+    }
+
+    header h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      color: #5a4635;
+      margin: 0;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 12px 0;
+      background-color: #f4d9c4;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #5a4635;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      background-color: #fbeee2;
+    }
+
+    nav ul li a:hover {
+      background-color: #e8cbb0;
+      transform: translateY(-3px);
+    }
+
+    nav ul li a.active {
+      background-color: #e8cbb0;
+    }
+
+    /* ===== Gallery Section ===== */
+    .gallery-section {
+      padding: 70px 30px;
+      text-align: center;
+    }
+
+    .gallery-section h2 {
+      font-family: "Great Vibes", cursive; /* sama dengan page lain */
+      font-size: 44px;
+      color: #4a3c2b;
+      margin-bottom: 60px;
+      background-color: #fff7f2;
+      padding: 10px 40px;
+      border-radius: 40px;
+      border: 2px solid #e8cbb0;
+      display: inline-block;
+      box-shadow: 0 4px 12px rgba(232, 203, 176, 0.3);
+    }
+
+    .gallery-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .polaroid-card {
+      background-color: #fff;
+      width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border: 6px solid #fff;
+      overflow: hidden;
+      position: relative;
+      font-family: 'Poppins', sans-serif; /* konsisten */
+    }
+
+    .polaroid-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    .polaroid-card img.active {
+      opacity: 1;
+    }
+
+    .caption {
+      background-color: #ffe4ec;
+      padding: 12px;
+      font-size: 15px;
+      color: #5a4635;
+      text-align: center;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: 28px;
+      height: 28px;
+      margin-top: -14px;
+      color: #fff;
+      background-color: rgba(90, 70, 53, 0.7);
+      border-radius: 50%;
+      line-height: 28px;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      user-select: none;
+      z-index: 2;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    footer {
+      background-color: #2b2b2b;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      font-size: 13px;
+      margin-top: 40px;
+      font-family: 'Poppins', sans-serif; /* konsisten */
+    }
+
+   /* ===== Music Player ===== */
+    .music-player {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .music-player button {
+      background-color: #f4d9c4;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 500;
+      color: #5a4635;
+      transition: 0.3s ease;
+    }
+
+    .music-player button:hover {
+      background-color: #e8cbb0;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .polaroid-card {
+        width: 90%;
+      }
+    }
+  </style>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <h1>Nur Qistina Personal Website</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index1.html">Home</a></li>
+      <li><a href="aboutme1.html">About Me</a></li>
+      <li><a href="family1.html">Family</a></li>
+      <li><a href="education1.html">Education</a></li>
+      <li><a href="experience1.html">Experience</a></li>
+      <li><a href="friends1.html">Friends</a></li>
+      <li><a href="hobby1.html">Hobby</a></li>
+      <li><a href="gallery1.html" class="active">Gallery</a></li>
+    </ul>
+  </nav>
+  
+  <!-- 🎵 Music Section -->
+<div class="music-player">
+  <audio id="bg-music" loop>
+    <source src="MUSIC/dengar alam berbunyi.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <button onclick="toggleMusic()">Play Music 🎶</button>
+</div>
+
+<script>
+  const music = document.getElementById("bg-music");
+  const btn = document.querySelector(".music-player button");
+  let isPlaying = false;
+
+  function toggleMusic() {
+    if (isPlaying) {
+      music.pause();
+      btn.textContent = "Play Music 🎶";
+    } else {
+      music.play();
+      btn.textContent = "Pause Music ⏸️";
+    }
+    isPlaying = !isPlaying;
+  }
+</script>
+
+  <section class="gallery-section">
+    <h2>My Memories Gallery 💕</h2>
+    <div class="gallery-grid">
+
+      <!-- Card 1 -->
+      <div class="polaroid-card">
+        <div class="slideshow-container" data-images="IMAGES/you1.jpg,IMAGES/you2.jpg,IMAGES/you3.jpg,IMAGES/you4.jpg,IMAGES/you5.jpg">
+          <img src="IMAGES/you1.jpg" alt="You" class="active">
+          <span class="prev">&#10094;</span>
+          <span class="next">&#10095;</span>
+        </div>
+        <div class="caption">Me 💕</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="polaroid-card">
+        <div class="slideshow-container" data-images="IMAGES/fam1.jpg,IMAGES/fam2.jpg,IMAGES/fam3.jpg,IMAGES/fam4.jpg,IMAGES/fam5.jpg">
+          <img src="IMAGES/fam1.jpg" alt="Family" class="active">
+          <span class="prev">&#10094;</span>
+          <span class="next">&#10095;</span>
+        </div>
+        <div class="caption">Family 🏡</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="polaroid-card">
+        <div class="slideshow-container" data-images="IMAGES/cat1.jpg,IMAGES/cat2.jpg,IMAGES/cat3.jpg,IMAGES/cat4.jpg,IMAGES/cat5.jpg">
+          <img src="IMAGES/cat1.jpg" alt="Cats" class="active">
+          <span class="prev">&#10094;</span>
+          <span class="next">&#10095;</span>
+        </div>
+        <div class="caption">Cats 🐱</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="polaroid-card">
+        <div class="slideshow-container" data-images="IMAGES/intern1.jpg,IMAGES/intern2.jpg,IMAGES/intern3.jpg,IMAGES/intern4.jpg,IMAGES/intern5.jpg">
+          <img src="IMAGES/intern1.jpg" alt="Internship" class="active">
+          <span class="prev">&#10094;</span>
+          <span class="next">&#10095;</span>
+        </div>
+        <div class="caption">Internship 💼</div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="polaroid-card">
+        <div class="slideshow-container" data-images="IMAGES/diploma1.jpg,IMAGES/diploma2.jpg,IMAGES/diploma3.jpg,IMAGES/diploma4.jpg,IMAGES/diploma5.jpg">
+          <img src="IMAGES/diploma1.jpg" alt="Diploma Friends" class="active">
+          <span class="prev">&#10094;</span>
+          <span class="next">&#10095;</span>
+        </div>
+        <div class="caption">Diploma Friends 🎓</div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="polaroid-card">
+        <div class="slideshow-container" data-images="IMAGES/highschool1.jpg,IMAGES/highschool2.jpg,IMAGES/highschool3.jpg,IMAGES/highschool4.jpg,IMAGES/highschool5.jpg">
+          <img src="IMAGES/highschool1.jpg" alt="High School Friends" class="active">
+          <span class="prev">&#10094;</span>
+          <span class="next">&#10095;</span>
+        </div>
+        <div class="caption">High School Friends 🏫</div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 This website is for educational purposes only | Nur Qistina Binti Azman Shah</p>
+  </footer>
+
+  <script>
+    // Manual slideshow logic
+    document.querySelectorAll('.slideshow-container').forEach(function(container){
+      let images = container.dataset.images.split(',');
+      let imgElement = container.querySelector('img');
+      let index = 0;
+
+      const prevBtn = container.querySelector('.prev');
+      const nextBtn = container.querySelector('.next');
+
+      function showImage(i){
+        index = (i + images.length) % images.length;
+        imgElement.classList.remove('active');
+        setTimeout(() => {
+          imgElement.src = images[index];
+          imgElement.classList.add('active');
+        }, 200);
+      }
+
+      prevBtn.addEventListener('click', () => showImage(index - 1));
+      nextBtn.addEventListener('click', () => showImage(index + 1));
+    });
+  </script>
+</body>
+</html>
